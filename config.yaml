@@ -1,0 +1,38 @@
+# for detailed documentation, see the readme
+machine:
+  num_workers: 0
+  gpus: [0]
+
+random_seed:
+  142
+
+log_base_directory:
+  logs/
+
+checkpoint_base_directory:
+  models/
+
+images_base_directory:
+  img/
+
+datasets:
+  SECOND:
+    path: data/SECOND/
+    # the idx refer to a patch side of 256 and a stride of 256 (i.e. 4 patches per image)
+    # and are in the dataset index type of the support set (see readme for details)
+    few_shot_tasks:
+      - change_types_from: [n.v.g. surface, low vegetation]
+        change_types_to: [n.v.g. surface, low vegetation]
+        idx_support: [23, 67, 109, 123, 366]
+
+      - change_types_from: [tree]
+        change_types_to: null
+        idx_support: [274, 487, 881, 912, 953]
+
+      - change_types_from: [building]
+        change_types_to: null
+        idx_support: [83, 233, 288, 515, 995]
+
+      - change_types_from: null
+        change_types_to: [building]
+        idx_support: [86, 131, 527, 583, 854]

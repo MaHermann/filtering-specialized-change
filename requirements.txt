@@ -1,0 +1,5 @@
+einops
+matplotlib
+pytorch-lightning
+PyYAML
+torchgeo==0.2.1
